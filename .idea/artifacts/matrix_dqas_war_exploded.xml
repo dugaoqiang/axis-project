@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="matrix-dqas:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/matrix_dqas_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="matrix-dqas/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="matrix-dqas" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JAX-WS-Apache Axis" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-codec-1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-httpclient-3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/fastjson-1.2.47.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-1.2.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

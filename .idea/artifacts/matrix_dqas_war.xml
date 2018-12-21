@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="matrix-dqas:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/matrix_dqas_war</output-path>
+    <root id="archive" name="matrix-dqas_war.war">
+      <element id="artifact" artifact-name="matrix-dqas:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_extension_core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_extension_huawei" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_installer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_system" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_system/src/main/resources-entV2/config.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_system/src/main/resources-entV2/ssoClient.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../matrix/matrix_system/src/main/resources-entV2/ssoClient.properties" charset="UTF-8" />
+  </component>
+</project>
