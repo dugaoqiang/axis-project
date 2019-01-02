@@ -63,7 +63,7 @@ public class HttpUtil {
                 System.out.println("Method failed code=" + statusCode + ": " + method.getStatusLine());
                 return statusCode + ":" + method.getStatusLine();
             } else {
-                System.out.println(new String(method.getResponseBody(), "utf-8"));
+                System.out.println("返回结果:"+new String(method.getResponseBody(), "utf-8"));
             }
         } catch (IOException e) {
             e.printStackTrace();

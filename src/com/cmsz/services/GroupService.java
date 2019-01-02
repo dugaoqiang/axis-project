@@ -14,8 +14,9 @@ public class GroupService {
     private static final String REST_API = HttpUtil.getConfig();
 
     public String queryWorkGroup(String groupId) {
+        System.out.println("-----------调用查询工作组服务queryWorkGroup():"+groupId);
         String jsonString = HttpUtil.httpUtil(REST_API + "/queryWorkGroup", "POST", groupId);
-        return JSON.toJSONString(jsonString);
+        return jsonString;
     }
 
 

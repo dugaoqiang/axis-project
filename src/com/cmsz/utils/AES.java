@@ -4,6 +4,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.alibaba.fastjson.JSONObject;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -83,16 +84,35 @@ public class AES {
     public static void main(String[] args) throws Exception {
         //举例
         AES aes = new AES();
-        String str = "dgq";
-		String str1="杜";
-		str = aes.encrypt(str);
-		str1 = aes.encrypt(str1);
-		System.out.println("加密="+str);
-		System.out.println("加密="+str1);
-		str= aes.decrypt(str);
-		str1= aes.decrypt("mRfD");
-		System.out.println("解密="+str);
-		System.out.println("解密="+str1);
+        String loginUser = "dgq";
+		String password="123456";
+		String contact_name="杜";
+        loginUser = aes.encrypt(loginUser);
+        password = aes.encrypt(password);
+        contact_name = aes.encrypt(contact_name);
+		System.out.println("加密="+loginUser);
+		System.out.println("加密="+password);
+		System.out.println("加密="+contact_name);
+        loginUser= aes.decrypt(loginUser);
+        password= aes.decrypt(password);
+        contact_name= aes.decrypt(contact_name);
+		System.out.println("解密="+loginUser);
+		System.out.println("解密="+password);
+		System.out.println("解密="+contact_name);
+
+        JSONObject jsonObject=new JSONObject();
+	    jsonObject.put("loginUser","iQDf");
+        jsonObject.put("password","iQDfSQQSaFuD9TfwJK4=");
+        jsonObject.put("staffName","C/oy7sb16pd6");
+        jsonObject.put("flag","1");
+        jsonObject.put("validLength","370");
+        jsonObject.put("expireDate","2018-12-15 12:00:00");
+        jsonObject.put("logLock","1");
+        jsonObject.put("departmentCode","1=");
+        jsonObject.put("workCode","1=");
+        jsonObject.put("note","测试");
+        System.out.println(jsonObject.toString());
+
 
 
 

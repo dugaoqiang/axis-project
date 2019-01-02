@@ -1,24 +1,22 @@
 package com.cmsz.services;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.cmsz.utils.HttpUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * 用户信息同步接口
  */
 public class UserService {
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     private static final String REST_API = HttpUtil.getConfig();
 
     /**
      * 查询用户
      */
     public String queryUserInfo(String loginUser) {
+        System.out.println("-----------开始调用查询服务:queryUserInfo()-----------" + loginUser);
         String jsonString = HttpUtil.httpUtil(REST_API + "/queryUserInfo", "POST", loginUser);
-        System.out.println("查询的数据为:" + jsonString);
-        return JSON.toJSONString(jsonString);
+        System.out.println("------------查询的数据为:" + jsonString + "---------");
+        return jsonString;
     }
 
 
@@ -26,37 +24,44 @@ public class UserService {
      * 添加用户
      */
     public String addUserInfo(String userInfo) {
+        System.out.println("-----------开始调用新增用户服务:addUserInfo()-----------" + userInfo);
         String jsonString = HttpUtil.httpUtil(REST_API + "/addUserInfo", "POST", userInfo);
-        logger.info("添加用户信息:" + jsonString);
-        return JSON.toJSONString(jsonString);
+        System.out.println("-----------返回结果----------" + jsonString);
+        return jsonString;
     }
 
     /**
      * 删除用户
      */
     public String delUserInfo(String loginUsers) {
+        System.out.println("-----------开始调用删除用户服务:delUserInfo()-----------" + loginUsers);
         String jsonString = HttpUtil.httpUtil(REST_API + "/delUserInfo", "POST", loginUsers);
-        return JSON.toJSONString(jsonString);
+        System.out.println("-----------返回结果----------" + jsonString);
+        return jsonString;
     }
 
     /**
      * 修改用户
      */
     public String modifyUserInfo(String userInfo) {
+        System.out.println("-----------开始调用修改用户服务:modifyUserInfo()-----------" + userInfo);
         String jsonString = HttpUtil.httpUtil(REST_API + "/modifyUserInfo", "POST", userInfo);
-        return JSON.toJSONString(jsonString);
-
+        System.out.println("-----------返回结果----------" + jsonString);
+        return jsonString;
     }
 
     /**
      * 修改用户密码
      */
     public String modifyUserPwd(String json) {
+        System.out.println("-----------开始调用修改用户密码服务:modifyUserPwd()-----------" + json);
         String jsonString = HttpUtil.httpUtil(REST_API + "/modifyUserPwd", "POST", json);
-        return JSON.toJSONString(jsonString);
+        System.out.println("-----------返回结果----------" + jsonString);
+        return jsonString;
     }
 
     public static void main(String[] args) {
+//        JSONObject jsonObject = new JSONObject();
 //        UserService userService=new UserService();
 //        /**
 //         * {"loginUser":"iQDfSQQSaFuD9TfwJK4=","password":"iQDfO1tNNQ==",
@@ -66,24 +71,26 @@ public class UserService {
 //         "note":"4A新增用户"}
 //
 //         */
-//       JSONObject jsonObject = new JSONObject();
-////        jsonObject.put("loginUser","iQDf");
-////        jsonObject.put("password","iQDfSQQSaFuD9TfwJK4=");
-////        jsonObject.put("staffName","C/oy7sb16pd6");
-////        jsonObject.put("flag","1");
-////        jsonObject.put("validLength","370");
-////        jsonObject.put("expireDate","2018-12-15 12:00:00");
-////        jsonObject.put("logLock","1");
-////        jsonObject.put("departmentCode","1=");
-////        jsonObject.put("workCode","1=");
-////        jsonObject.put("note","测试");
-////        String s = new UserService().addUserInfo(jsonObject.toJSONString());
-////        System.out.println(s);
-//
-////        jsonObject.put("loginUsers", "iQDfSQQSaFuD9TfwJK6M89u/LYLNsa/abKiotMNvdqt2hKXf");
-////        String delResult = new UserService().delUserInfo(jsonObject.toJSONString());
-////        System.out.println(delResult);
-////        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("loginUser","iQDf");
+//        jsonObject.put("password","iQDfSQQSaFuD9TfwJK4=");
+//        jsonObject.put("staffName","C/oy7sb16pd6");
+//        jsonObject.put("flag","1");
+//        jsonObject.put("validLength","370");
+//        jsonObject.put("expireDate","2018-12-15 12:00:00");
+//        jsonObject.put("logLock","1");
+//        jsonObject.put("departmentCode","1=");
+//        jsonObject.put("workCode","1=");
+//        jsonObject.put("note","测试");
+//        String s = new UserService().addUserInfo(jsonObject.toJSONString());
+//        System.out.println(s);
+//        AES aes=new AES();
+//        String jBfD = aes.decrypt("jBfD");
+//        System.out.println(jBfD);
+////
+//        jsonObject.put("loginUsers", "iQDf");
+//        String delResult = new UserService().delUserInfo(jsonObject.toJSONString());
+//        System.out.println(delResult);
+//////        JSONObject jsonObject = new JSONObject();
 ////        jsonObject.put("loginUser","iQDf");
 ////        jsonObject.put("password","iQDfSQQSaFuD9TfwJK4=");
 ////        jsonObject.put("staffName","C/oy");
@@ -98,11 +105,11 @@ public class UserService {
 //        String s = userService.modifyUserPwd(jsonObject.toJSONString());
 //        System.out.println(s);
 //
-////        String str="tpm@oneapm.com";
-////        String substring = str.substring(0, str.indexOf("@"));
-////        System.out.println(substring);
-////        jsonObject.put("loginUser","iRLJaAQNZFud/1n8JabB58P2L4LR");
-////        String userInfo = new UserService().queryUserInfo(jsonObject.toString());
-////        System.out.println("查询用户:"+userInfo);
+//        String str="tpm@oneapm.com";
+//        String substring = str.substring(0, str.indexOf("@"));
+//        System.out.println(substring);
+//        jsonObject.put("loginUser","iRLJaAQNZFud/1n8JabB58P2L4LR");
+//        String userInfo = new UserService().queryUserInfo(jsonObject.toString());
+//        System.out.println("查询用户:"+userInfo);
     }
 }

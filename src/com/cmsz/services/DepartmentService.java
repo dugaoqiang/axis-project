@@ -14,8 +14,9 @@ public class DepartmentService {
     private static final String REST_API = HttpUtil.getConfig();
 
     public String queryDepartment(String departmentId) {
+        System.out.println("-----------调用查询部门服务queryDepartment():"+departmentId);
         String jsonString = HttpUtil.httpUtil(REST_API + "/queryDepartment", "POST", departmentId);
-        return JSON.toJSONString(jsonString);
+        return jsonString;
     }
 
 

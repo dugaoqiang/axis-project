@@ -13,8 +13,9 @@ public class LoginSwitchService {
     private static final String REST_API = HttpUtil.getConfig();
 
     public String loginModChg(String flag) {
+        System.out.println("-----------调用切换认证开关服务loginModChg():"+flag);
         String jsonString = HttpUtil.httpUtil(REST_API + "/loginModChg", "POST", flag);
-        return JSON.toJSONString(jsonString);
+        return jsonString;
     }
 
 
